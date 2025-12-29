@@ -71,14 +71,14 @@ namespace ElectricityBoardBilling
                         "Consumer Name : " + ebill.ConsumerName + "<br/>" +
                         "Units Consumed : " + ebill.UnitsConsumed + "<br/>" +
                         "Bill Amount : " + ebill.BillAmount + "<br/><br/>" +
-                        "✔ Bill inserted successfully into database";
+                        "Bill inserted successfully into database";
 
                     lblResult.ForeColor = System.Drawing.Color.Green;
                 }
                 else
                 {
                    
-                    lblResult.Text = "❌ Bill calculation done but failed to save into database.";
+                    lblResult.Text = "Bill calculation done but failed to save into database.";
                     lblResult.ForeColor = System.Drawing.Color.Red;
                 }
             }
