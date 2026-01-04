@@ -8,81 +8,89 @@
     <title>Admin Login</title>
 
     <style>
+      
         body {
             margin: 0;
-            height: 100vh;
-            background-color: #f5f7fb;
+            min-height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
-
+            background-color: #E6ECFF;  
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+       
         .login-card {
-            width: 300px;              
-            padding: 24px;
-            background: #ffffff;
+            width: 300px;                 
+            padding: 30px 26px 36px;
+            background-color:#f8f9fa;
             border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
 
         .login-card h2 {
             text-align: center;
-            color: #0d6efd;
-            margin-bottom: 20px;
-            font-weight: 600;
+            color: #0A0DEB;
+            margin-bottom: 24px;
             font-size: 20px;
+            font-weight: 600;
         }
 
         .form-group {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 4px;
-            margin-left:15px;
-            font-size:20px;
-            font-family:Arial, Helvetica, sans-serif;
-            font-weight: 500;
-            color: #333;
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #494D5F;
         }
 
-      
+       
         .login-input {
-            width: 85%;               
-            height: 28px;            
-            padding: 3px 6px;
+            width: 100%;
+            height: 32px;               
+            padding: 4px 8px;
             border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 12px;
-            display: block;
-            margin: 0 auto;
+            border: 1px solid #D0D0F4;
+            font-size: 13px;
+            box-sizing: border-box;
         }
 
         .login-input:focus {
             outline: none;
-            border-color: #0d6efd;
-            box-shadow: 0 0 0 2px rgba(13,110,253,0.15);
+            border-color: #0A0DEB;
+            box-shadow: 0 0 0 2px rgba(10,13,235,0.15);
         }
 
+     
         .login-btn {
-            width: 120px;
-            height: 50px;
-            margin: 16px auto 0;
+            width: 130px;              
+            height: 40px;
+            margin: 22px auto 18px;
             display: block;
-            background-color: #0d6efd;
-            color: white;
-            border:2px solid #0d6efd;
-           border-radius:20px;
+            background-color: #0A0DEB;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
             cursor: pointer;
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .login-btn:hover {
-            background-color: #0b5ed7;
+            background-color: #0909c9;
+        }
+
+       
+        .error-msg {
+            text-align: center;         
+            color: #D9534F;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 6px;
         }
     </style>
 </head>
@@ -114,6 +122,11 @@
             Text="Login"
             CssClass="login-btn"
             OnClick="btnLogin_Click" />
+
+        <asp:Label ID="lblError"
+            runat="server"
+            CssClass="error-msg"
+            Visible="false"></asp:Label>
 
     </div>
 

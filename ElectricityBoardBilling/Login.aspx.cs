@@ -27,14 +27,9 @@ namespace ElectricityBoardBilling
             }
             else
             {
-                
-                ScriptManager.RegisterStartupScript(
-                    this,
-                    this.GetType(),
-                    "loginError",
-                    "alert('Invalid username or password');",
-                    true
-                );
+
+                lblError.Text = "Invalid username or password";
+                lblError.Visible = true;
             }
         }
     }

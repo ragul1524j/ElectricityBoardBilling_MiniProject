@@ -25,7 +25,7 @@
 
         <asp:ScriptManager runat="server" />
 
-    
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold" runat="server" href="~/Default.aspx">⚡ EB Billing
@@ -57,12 +57,12 @@
             </div>
         </nav>
 
-        <!-- CONTENT -->
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
 
-        <!-- FOOTER -->
+
         <footer class="app-footer">
             <p>&copy; <%: DateTime.Now.Year %> Electricity Board Billing System</p>
         </footer>

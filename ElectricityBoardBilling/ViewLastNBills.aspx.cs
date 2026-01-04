@@ -20,8 +20,21 @@ namespace ElectricityBoardBilling
 
         protected void btnView_Click(object sender, EventArgs e)
         {
+         
+            cvCount.IsValid = true;
+
+            
+            if (!Page.IsValid)
+                return;
+
             int n = int.Parse(txtCount.Text.Trim());
 
+            
+            if (n <= 0)
+            {
+                cvCount.IsValid = false;
+                return;
+            }
             ElectricityBoard board = new ElectricityBoard();
             List<ElectricityBill> bills = board.Generate_N_BillDetails(n);
 
@@ -29,5 +42,6 @@ namespace ElectricityBoardBilling
             gvBills.DataBind();
             gvBills.Visible = true;
         }
+
     }
 }

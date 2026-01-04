@@ -1,4 +1,10 @@
 ﻿
+body {
+    background-color: #E6ECFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 .body-content {
     min-height: calc(100vh - 160px);
     padding-top: 30px;
