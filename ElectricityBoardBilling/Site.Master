@@ -41,6 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link" runat="server" href="~/ViewLastNBills.aspx">View Bills</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" runat="server" href="~/ViewBillsByConsumer">View BillsByConsumerNum</a>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto">

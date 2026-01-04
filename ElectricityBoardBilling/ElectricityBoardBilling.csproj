@@ -179,6 +179,7 @@
     <Content Include="Site.Master" />
     <Content Include="style.css" />
     <Content Include="TestConnection.aspx" />
+    <Content Include="ViewBillsByConsumer.aspx" />
     <Content Include="ViewLastNBills.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="TestConnection.aspx.designer.cs">
       <DependentUpon>TestConnection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBillsByConsumer.aspx.cs">
+      <DependentUpon>ViewBillsByConsumer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewBillsByConsumer.aspx.designer.cs">
+      <DependentUpon>ViewBillsByConsumer.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewLastNBills.aspx.cs">
       <DependentUpon>ViewLastNBills.aspx</DependentUpon>

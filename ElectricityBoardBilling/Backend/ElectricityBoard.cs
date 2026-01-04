@@ -27,29 +27,30 @@ namespace ElectricityBoardBilling.Backend
             ebill.BillAmount = amount;
         }
 
-     
+
         public bool AddBill(ElectricityBill ebill)
         {
             using (SqlConnection con = DBHandler.GetConnection())
             {
                 string query =
                     "INSERT INTO ElectricityBill " +
-                    "(consumer_number, consumer_name, units_consumed, bill_amount) " +
-                    "VALUES (@cno, @cname, @units, @amount)";
+                    "(consumer_number, consumer_name, units_consumed, bill_amount, bill_month) " +
+                    "VALUES (@cno, @cname, @units, @amount, @month)";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@cno", ebill.ConsumerNumber);
                 cmd.Parameters.AddWithValue("@cname", ebill.ConsumerName);
                 cmd.Parameters.AddWithValue("@units", ebill.UnitsConsumed);
                 cmd.Parameters.AddWithValue("@amount", ebill.BillAmount);
+                cmd.Parameters.AddWithValue("@month", ebill.BillMonth);
 
                 con.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
 
-                
                 return rowsAffected > 0;
             }
         }
+
 
 
         public List<ElectricityBill> Generate_N_BillDetails(int n)
@@ -82,6 +83,36 @@ namespace ElectricityBoardBilling.Backend
                 }
             }
 
+            return bills;
+        }
+
+        public List<ElectricityBill> GetBillsByConsumer(string consumerNumber)
+        {
+            List<ElectricityBill> bills = new List<ElectricityBill>();
+            using (SqlConnection con = DBHandler.GetConnection())
+            {
+                string query =
+            "SELECT consumer_number, consumer_name, bill_month, units_consumed, bill_amount " +
+            "FROM ElectricityBill " +
+            "WHERE consumer_number = @cno " +
+            "ORDER BY bill_month";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@cno", consumerNumber);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while(dr.Read())
+                {
+                    bills.Add(new ElectricityBill
+                    {
+                        ConsumerNumber = dr["consumer_number"].ToString(),
+                        ConsumerName = dr["consumer_name"].ToString(),
+                        BillMonth = dr["bill_month"].ToString(),
+                        UnitsConsumed = Convert.ToInt32(dr["units_consumed"]),
+                        BillAmount = Convert.ToDouble(dr["bill_amount"])
+                    });
+                }
+            }
             return bills;
         }
 

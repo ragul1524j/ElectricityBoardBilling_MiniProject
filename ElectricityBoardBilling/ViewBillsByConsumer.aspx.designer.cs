@@ -11,7 +11,7 @@ namespace ElectricityBoardBilling
 {
 
 
-    public partial class AddElectricityBill
+    public partial class ViewBillsByConsumer
     {
 
         /// <summary>
@@ -24,48 +24,30 @@ namespace ElectricityBoardBilling
         protected global::System.Web.UI.WebControls.TextBox txtConsumerNumber;
 
         /// <summary>
-        /// txtConsumerName control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConsumerName;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// txtUnits control.
+        /// gvBills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnits;
+        protected global::System.Web.UI.WebControls.GridView gvBills;
 
         /// <summary>
-        /// ddlMonth control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMonth;
-
-        /// <summary>
-        /// btnAddBill control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddBill;
-
-        /// <summary>
-        /// lblResult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResult;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

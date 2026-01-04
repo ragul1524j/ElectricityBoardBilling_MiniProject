@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ElectricityBoardBilling.Backend
 {
@@ -11,6 +8,7 @@ namespace ElectricityBoardBilling.Backend
         private string consumerName;
         private int unitsConsumed;
         private double billAmount;
+        private string billMonth;   
 
         public string ConsumerNumber
         {
@@ -34,6 +32,12 @@ namespace ElectricityBoardBilling.Backend
         {
             get { return billAmount; }
             set { billAmount = value; }
+        }
+
+        public string BillMonth
+        {
+            get { return billMonth; }
+            set { billMonth = value; }
         }
     }
 }
