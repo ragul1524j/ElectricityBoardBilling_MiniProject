@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using ElectricityBoardBilling.Backend;
@@ -35,7 +36,7 @@ namespace ElectricityBoardBilling
              
                 if (!Regex.IsMatch(consumerNumber, @"^EB\d{5}$"))
                 {
-                    lblResult.Text = "Consumer Number must be in the format EB12345.";
+                    lblResult.Text = "Consumer Number must be Unique in the format EB12345.";
                     lblResult.ForeColor = System.Drawing.Color.Red;
                     return;
                 }
@@ -82,8 +83,13 @@ namespace ElectricityBoardBilling
                     lblResult.ForeColor = System.Drawing.Color.Red;
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
+                if(ex.Number == 2627 || ex.Number == 2601)
+                {
+                    lblResult.Text = "Insertion Failed : Consumer Number Already Exists";
+                    lblResult.ForeColor = System.Drawing.Color.Red;
+                }
               
                 lblResult.Text = "Error occurred : " + ex.Message;
                 lblResult.ForeColor = System.Drawing.Color.Red;
